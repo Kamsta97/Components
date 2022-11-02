@@ -1,0 +1,14 @@
+<div>
+    <mat-card class="example-card">
+        <mat-card-title>{{course?.title}}</mat-card-title>
+        <mat-card-content>
+          <p>Authors: {{course?.authors}}<br>Duration: {{course?.duration}}<br>Created: {{course?.creationDate}}</p>
+          <p>{{course?.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <app-button [label]="'Show courses'"></app-button>
+          <app-button *ngIf="loggedIn" [icon]="'delete'"></app-button>
+          <app-button *ngIf="loggedIn" [icon]="'edit'"></app-button>
+        </mat-card-actions>
+      </mat-card>
+</div>

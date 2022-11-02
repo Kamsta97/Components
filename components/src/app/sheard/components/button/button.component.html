@@ -1,0 +1,2 @@
+<button *ngIf="!icon" (click)="onClickButton($event)" mat-button>{{label}}</button>
+<button  *ngIf="icon" (click)="onClickButton($event)" mat-button><mat-icon fontIcon="{{icon}}"></mat-icon></button>

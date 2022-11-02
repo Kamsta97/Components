@@ -1,0 +1,8 @@
+<mat-toolbar>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <a *ngIf="!loggedIn" [routerLink]="['../login']"><app-button [label]="'Login'"></app-button></a>
+  <a *ngIf="loggedIn" [routerLink]="['../login']"><app-button (onClick)="logout($event)" [label]="'Logout'"></app-button></a>
+  
+</mat-toolbar>
+<router-outlet></router-outlet>
