@@ -9,17 +9,20 @@
                 Name is required</mat-error>
           </mat-form-field>
           <mat-form-field>
-            <input type="email" matInput placeholder="Email" formControlName="email">
+            <input appEmailValidator type="email" matInput placeholder="Email" formControlName="email">
             <mat-error *ngIf="this.registrationForm.get('email')?.touched && this.registrationForm.get('email')?.hasError('required')">
               Email is required</mat-error>
-            <mat-error *ngIf="this.registrationForm.get('email')?.touched && this.registrationForm.get('email')?.hasError('email')">
-              Email must be a valid Email</mat-error>
+            <mat-error *ngIf="this.registrationForm.get('email')?.touched">
+              Email must contain @</mat-error>
           </mat-form-field>
           <mat-form-field>
             <input type="password" matInput placeholder="Password" formControlName="password">
             <mat-error
               *ngIf="this.registrationForm.get('password')?.touched && this.registrationForm.get('password')?.hasError('required')">
               Password is required</mat-error>
+            <mat-error
+              *ngIf="this.registrationForm.get('password')?.touched && this.registrationForm.get('password')?.hasError('minlength')">
+              Password must be at least 6 characters long.</mat-error>
           </mat-form-field>
   
           <div class="button">

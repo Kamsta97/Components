@@ -4,11 +4,11 @@
       <mat-card-content>
         <form [formGroup]="loginForm" (ngSubmit)="login()">
           <mat-form-field>
-            <input type="email" matInput placeholder="Email" formControlName="email">
+            <input appEmailValidator type="email" matInput placeholder="Email" formControlName="email">
             <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('required')">
               Email is required</mat-error>
-            <mat-error *ngIf="this.loginForm.get('email')?.touched && this.loginForm.get('email')?.hasError('email')">
-              Email must be a valid Email</mat-error>
+            <mat-error *ngIf="this.loginForm.get('email')?.touched">
+              Email must contain @</mat-error>
           </mat-form-field>
   
           <mat-form-field>

@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup = new FormGroup({
-    email: new FormControl(null, [Validators.required, Validators.email]),
+    email: new FormControl(null, [Validators.required]),
     password: new FormControl(null, [Validators.required]),
   });
 
@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    console.log(this.loginForm);
     localStorage.setItem('user', JSON.stringify({name: this.loginForm.get('email')?.value}));
     this.router.navigate(['/','courses'])
     setTimeout(() => {

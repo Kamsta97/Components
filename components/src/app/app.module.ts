@@ -17,6 +17,9 @@ import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { EmailValidatorDirective } from './directives/email-validator.directive';
+import { CreationDatePipe } from './pipes/creation-date.pipe';
+import { DurationPipe } from './pipes/duration.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,9 @@ import {MatInputModule} from '@angular/material/input';
     RegistrationComponent,
     CoursesComponent,
     CourseComponent,
+    EmailValidatorDirective,
+    CreationDatePipe,
+    DurationPipe
   ],
   imports: [
     BrowserModule,

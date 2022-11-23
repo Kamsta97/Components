@@ -2,7 +2,7 @@
     <mat-card class="example-card">
         <mat-card-title>{{course?.title}}</mat-card-title>
         <mat-card-content>
-          <p>Authors: {{course?.authors}}<br>Duration: {{course?.duration}}<br>Created: {{course?.creationDate}}</p>
+          <p>Authors: {{course?.authors}}<br>Duration: {{course?.duration | duration}}<br>Created: {{course?.creationDate | creationDate}}</p>
           <p>{{course?.description}}</p>
         </mat-card-content>
         <mat-card-actions>
