@@ -20,6 +20,7 @@ import {MatInputModule} from '@angular/material/input';
 import { EmailValidatorDirective } from './directives/email-validator.directive';
 import { CreationDatePipe } from './pipes/creation-date.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { DurationPipe } from './pipes/duration.pipe';
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
