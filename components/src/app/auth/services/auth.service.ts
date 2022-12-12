@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { SessionStorageService } from './session-storage.service';
 
 @Injectable({
@@ -15,6 +15,12 @@ export class AuthService {
   login(username: string, passwrod: string) { 
     this.sessionService.setToken(username);
     this.isAuthorized$$?.next(true);
+
+    return of({
+      token: username+passwrod,
+      isAuth: true,
+      errorMessage: ''
+    });
   }
 
   logout() {

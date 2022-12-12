@@ -21,6 +21,9 @@ import { EmailValidatorDirective } from './directives/email-validator.directive'
 import { CreationDatePipe } from './pipes/creation-date.pipe';
 import { DurationPipe } from './pipes/duration.pipe';
 import { AuthModule } from './auth/auth.module';
+import { effects, reducers } from './store';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,10 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    AuthModule
+    AuthModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot(effects)
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
